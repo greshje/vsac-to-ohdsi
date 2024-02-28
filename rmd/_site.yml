@@ -18,9 +18,9 @@ navbar:
       icon: fa-list
       menu:
         - text: "VSAC"
-          href: vsac-getting-started.html
+          href: getting-started_vsac.html
         - text: "VSAC to OHDSI"
-          href: vsac-to-ohdsi.html
+          href: getting-started_vsac-to-ohdsi.html
     - text: "About"
       icon: fa-list
       menu:
