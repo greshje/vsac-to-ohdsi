@@ -1,0 +1,31 @@
+name: "VSAC to OHDSI"
+output_dir: "../docs"
+output:
+  html_document:
+    theme: cosmo
+    css: style.css
+    includes:
+      in_header: "favicon.html"
+exclude: ["extras"]
+navbar:
+  title: '<div><img src="ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div>'
+  right:
+  left:
+    - text: "Background"
+      icon: fa-landmark
+      href: background.html
+    - text: "Getting Started"
+      icon: fa-list
+      menu:
+        - text: "VSAC"
+          href: vsac-getting-started.html
+        - text: "VSAC to OHDSI"
+          href: vsac-to-ohdsi.html
+    - text: "About"
+      icon: fa-list
+      menu:
+        - text: "About"
+          href: about.html
+    - text: Github
+      icon: fa-github
+      href: https://github.com/NACHC-CAD/vsac-to-ohdsi
