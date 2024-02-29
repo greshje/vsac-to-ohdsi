@@ -21,6 +21,11 @@ navbar:
           href: getting-started_vsac.html
         - text: "VSAC to OHDSI"
           href: getting-started_vsac-to-ohdsi.html
+    - text: "Use Cases"
+      icon: fa-list
+      menu:
+        - text: "Import a Single Value Set from VSAC into OHDSI"
+          href: use-cases-01-import-single.html
     - text: "About"
       icon: fa-list
       menu:

@@ -1,0 +1,19 @@
+---
+title: '<div><img src="ohdsi40x40.png"></img> VSAC to OHDSI Use Cases and Examples</div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+# Import a Single Value Set
+## Introduction
+This use case will walk through the process of 
+downloading a value set from VSAC, 
+using the vsac-to-ohdsi tools to extract, 
+and convert the value set into a format that can be imported into OHDSI, 
+and using the OHDSI Atlas tool to import the value set into OHDSI. 
+This use case will then show how to create a cohort (phenotype) 
+using the imported value set. 
