@@ -3,12 +3,12 @@ output_dir: "../docs"
 output:
   html_document:
     theme: cosmo
-    css: style.css
+    css: img/style.css
     includes:
-      in_header: "favicon.html"
+      in_header: "img/favicon.html"
 exclude: ["extras"]
 navbar:
-  title: '<div><img src="ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div>'
+  title: '<div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div>'
   right:
   left:
     - text: "Background"
@@ -18,9 +18,11 @@ navbar:
       icon: fa-list
       menu:
         - text: "VSAC"
-          href: getting-started_vsac.html
+          href: getting-started-vsac.html
+        - text: "VSAC Value Sets"
+          href: getting-started-vsac-value-sets.html
         - text: "VSAC to OHDSI"
-          href: getting-started_vsac-to-ohdsi.html
+          href: getting-started-vsac-to-ohdsi.html
     - text: "Use Cases"
       icon: fa-list
       menu:

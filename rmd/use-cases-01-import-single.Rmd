@@ -1,5 +1,5 @@
 ---
-title: '<div><img src="ohdsi40x40.png"></img> VSAC to OHDSI Use Cases and Examples</div>'
+title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI Use Cases and Examples</div>'
 output:
    html_document:
         toc: TRUE
