@@ -10,6 +10,19 @@ output:
 
 # Getting Started with VSAC
 
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
 <!-- 
 *
 * Introduction
@@ -48,11 +61,96 @@ output:
 * -->
 
 ## Get Login Credentials
-To fully use the VSAC resources you will need login credentials. 
-To get an account that can be used to log into VSAC go to 
-<a href="https://vsac.nlm.nih.gov/">https://vsac.nlm.nih.gov/</a>. 
+<p align="justify">
+  <font  color="red">
+    Note: It will take upto 3 business days to get your license. 
+    Get this process started sooner rather than later. 
+  </font>
+</p>
+<p align="justify">
+  To fully use the VSAC resources you will need login credentials. 
+  To get an account that can be used to log into VSAC go to 
+  <a href="https://vsac.nlm.nih.gov/">https://vsac.nlm.nih.gov/</a>. 
+  Select the Sign In link, then select the "Request One Now" link for 
+  "Don't have a UMLS license/account?". 
+  <br/>
+  <img 
+    src="./img/getting-started/vsac/01-get-login.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac/01-get-login.png')" 
+    title="Click to see full size."
+    
+  />
+  <br/>
+  <br/>
+</p>
 
+<!--
+*
+* Select Identity Provider
+*
+-->
 
+Select an identity provider. 
+<br/>
+<img 
+  src="./img/getting-started/vsac/02-select-id-provider.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac/02-select-id-provider.png')" 
+  title="Click to see full size."
+  
+/>
+<br/>
+<br/>
+
+<!--
+*
+* Accept Agreement
+*
+-->
+
+Scroll to the very bottom of the very long agreement page and select "Accept and Continue". 
+<br/>
+<img 
+  src="./img/getting-started/vsac/03-accept.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac/03-accept.png')" 
+  title="Click to see full size."
+  
+/>
+<br/>
+<br/>
+
+<!--
+*
+* Fill out the form
+*
+-->
+
+Provide the requested information. 
+<br/>
+<img 
+  src="./img/getting-started/vsac/04-form.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac/04-form.png')" 
+  title="Click to see full size."
+  
+/>
+<br/>
+<br/>
+
+<!--
+*
+* Wait
+*
+-->
+
+It will take upto 3 business days for the request to be processed. 
+<br/>
+<img 
+  src="./img/getting-started/vsac/05-wait.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac/05-wait.png')" 
+  title="Click to see full size."
+  
+/>
+<br/>
+<br/>
 
 
 
