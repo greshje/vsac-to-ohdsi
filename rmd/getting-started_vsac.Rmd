@@ -8,8 +8,6 @@ output:
           collapsed: false
 ---
 
-# Getting Started with VSAC
-
 <!--
 *
 * javascript
@@ -22,6 +20,8 @@ output:
     window.open(imageSrc, '_blank', 'width=auto,height=auto');
   }
 </script>
+
+# Getting Started with VSAC
 
 <!-- 
 *
@@ -96,7 +96,6 @@ Select an identity provider.
   src="./img/getting-started/vsac/02-select-id-provider.png" 
   onclick="openFullSizeImage('./img/getting-started/vsac/02-select-id-provider.png')" 
   title="Click to see full size."
-  
 />
 <br/>
 <br/>
@@ -113,7 +112,6 @@ Scroll to the very bottom of the very long agreement page and select "Accept and
   src="./img/getting-started/vsac/03-accept.png" 
   onclick="openFullSizeImage('./img/getting-started/vsac/03-accept.png')" 
   title="Click to see full size."
-  
 />
 <br/>
 <br/>
@@ -130,7 +128,6 @@ Provide the requested information.
   src="./img/getting-started/vsac/04-form.png" 
   onclick="openFullSizeImage('./img/getting-started/vsac/04-form.png')" 
   title="Click to see full size."
-  
 />
 <br/>
 <br/>
@@ -147,7 +144,6 @@ It will take upto 3 business days for the request to be processed.
   src="./img/getting-started/vsac/05-wait.png" 
   onclick="openFullSizeImage('./img/getting-started/vsac/05-wait.png')" 
   title="Click to see full size."
-  
 />
 <br/>
 <br/>
