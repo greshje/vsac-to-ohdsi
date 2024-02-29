@@ -69,7 +69,14 @@ output:
   In our first example, we will find and evaluate a value set for covid vaccinations.
 </p>
 
+<!--
+*
+* Search
+*
+-->
+
 ### Search
+
 The VSAC web site provides a search tool that can be used 
 to find candidates for a value set that can be used to define 
 a list of codes that represent covid vaccinations as medication/vaccination codes. 
@@ -94,6 +101,54 @@ for the initial assessment of this value set.
 />
 <br/>
 <br/>
+
+<!--
+*
+* View Results
+*
+-->
+
+### View Details
+To view the details of the value set select the "Value Set Details" tab in the middle of the page. 
+Select the "Description" tab on the left to see the details for this result set as shown below. 
+<img 
+  src="./img/getting-started/vsac-value-sets/02-results.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac-value-sets/02-results.png')" 
+  title="Click to see full size."
+/>
+<br/>
+
+<p align="justify">
+  From the purpose section of this page we can see that this value set might be fit 
+  for our purpose of using this value set to define an OHDSI code set for a cohort. 
+  However, we also notice that this value set is attributed to  a business analyst 
+  and we have no indication that this value set was reviewed by a clinician. 
+  We next consult the clinician on our team to review this value set. 
+  Upon review the clinician indicates that there is a large number of codes 
+  that are not included that should be. 
+</p>
+<p>
+  Fortunately, our clinician has created a more comprehensive value set. 
+  This set will be uploaded to VSAC by our clinician. 
+  Once this is done we will be able to use the new value set. 
+</p>
+
+<!--
+*
+* View Results
+*
+-->
+
+### Discussion
+VSAC is a powerful resource for the curation and distribution of value sets, 
+both with in OHDSI as well as outside of OHDSI. 
+However, value sets in VSAC serve differing purposes. 
+When selecting a value set from VSAC it is critical to review the value set 
+and to have the value set reviewed by both informatics specialists and clinical experts. 
+The use of VSAC value sets in OHDSI would be greatly enhanced 
+by the creation of a mechanism to identify validated and prefered value sets 
+and associate these value sets with well defined descriptions 
+of how they should be used in an OHDSI context. 
 
 
 
