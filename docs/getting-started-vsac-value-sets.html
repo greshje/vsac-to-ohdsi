@@ -11,7 +11,7 @@
 
 
 
-<title> VSAC to OHDSI Use Cases and Examples</title>
+<title> VSAC to OHDSI</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -403,7 +403,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore"><img src="img/ohdsi40x40.png"></img> VSAC
-to OHDSI Use Cases and Examples</h1>
+to OHDSI</h1>
 
 </div>
 
@@ -419,75 +419,74 @@ to OHDSI Use Cases and Examples</h1>
     window.open(imageSrc, '_blank', 'width=auto,height=auto');
   }
 </script>
-<div id="import-a-single-value-set" class="section level1">
-<h1>Import a Single Value Set</h1>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>This use case will walk through the process of downloading a value
-set from VSAC, using the vsac-to-ohdsi tools to extract, and convert the
-value set into a format that can be imported into OHDSI, and using the
-OHDSI Atlas tool to import the value set into OHDSI. This use case will
-then show how to create a cohort (phenotype) using the imported value
-set. For this use case a UMLS license is required for full access to
-VSAC. Instructions for getting a UMLS license are
-<a href="./getting-started_vsac.html">here</a>.</p>
-</div>
-<div id="download-a-value-set-from-vsac" class="section level2">
-<h2>Download a Value Set from VSAC</h2>
+<div id="getting-started-with-vsac-value-sets" class="section level1">
+<h1>Getting Started with VSAC Value Sets</h1>
 <!--
 *
-* Download
+* Introduction
 *
 -->
-<p>
-<font  color="red"> Note: We will need to download the value set as
-text. If you are logged into VSAC download as text is not an option.
-Make sure you are NOT logged into VSAC when you attempt this download.
-</font>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p align="justify">
+VSAC hosts a wide range of value sets created for differing purposes.
+For example a value set may be created that is intended to define a
+population such as “homeless”. An other value set relating to homeless
+might be a set of codes that could be used to determine a probability of
+homeless (i.e. a patient that has many of the codes in the value set has
+a higher probability of being homeless). Also, value sets come from a
+number of different organizations and are created by individuals with
+differing expertise (e.g. clinical background v. non-clinical
+contributors).
 </p>
-Navigate to the
-<a href="https://vsac.nlm.nih.gov/valueset/expansions?pr=all">VSAC
-Search Page</a>.
+<p>
+Therefore, it is critical to evaluate a value set before selecting it
+for use. Some of the criteria for this evaluation include
 <ul>
 <li>
-Select the “Search Value Sets” tab.
+The purpose of the value set
 </li>
 <li>
-Enter “covid vaccination” into the Query field.
+The source organization of the value set
 </li>
 <li>
-Select Search.
+The expertises of the creator(s) of the value set
 </li>
 <li>
-Select the COVID_19Vaccine_CVX value set from the list of values.
+The type of the value set (e.g. Grouping, Extensional, Intensional,
+etc.)
 </li>
 <li>
-Select Download.
+Before selecting a value set for production use it should be reviewed by
+both clinicians and informaticists.
 </li>
 </ul>
-<p><img 
-  src="img/use-cases/01-use-cases-01-import-single/01-download.png" 
-  onclick="openFullSizeImage('./img/use-cases/01-use-cases-01-import-single/01-download.png')" 
-  title="Click to see full size."
-/> <br/> <br/> The value set should now be downloaded as a single
-.txt.zip file as shown below. This is the file that will be used to
-create the value set in OHDSI. <br/> <img 
-  src="img/use-cases/01-use-cases-01-import-single/02-downloaded.png" 
-  onclick="openFullSizeImage('./img/use-cases/01-use-cases-01-import-single/02-downloaded.png')" 
-  title="Click to see full size."
-/></p>
-<p>
-<font  color="red"> Note: The value set used in this example
-(COVID_19Vaccine_CVX) is not suitable for production. This value set is
-missing a large number of codes that should be included when looking for
-covid vaccination codes. </font>
+There currently is not a repository of VSAC value sets that have been
+evaluated for fitness for use in the definition of OHDSI phenotypes.
 </p>
-<p>
-More on how to evaluate and find suitable value sets can be found on the
-<a href="getting-started-vsac-value-sets.html">Getting Started with VSAC
-Value Sets</a> which can be found under the “Getting Started” menu at
-the top of this page.
+<p align="justify">
+In our first example, we will find and evaluate a value set for covid
+vaccinations
 </p>
+<!--
+*
+* Finding a Value Set
+*
+-->
+</div>
+<div id="finding-a-value-set-covid" class="section level2">
+<h2>Finding a Value Set (COVID)</h2>
+<div id="search" class="section level3">
+<h3>Search</h3>
+<p>The VSAC web site provides a search tool that can be used to find
+candidates for a value set that can be used to define a list of codes
+that represent covid vaccinations as medication/vaccination codes. To
+search for this list of value sets go to the
+<a href="https://vsac.nlm.nih.gov/valueset/expansions?pr=all">VSAC
+Search Page</a>. Select the “Search Value Sets” tab. Enter “covid
+vaccination” in the Query text box. Select Search. This should give a
+list similar to the one shown below.</p>
+</div>
 </div>
 </div>
 

@@ -42,7 +42,7 @@ Instructions for getting a UMLS license are
 *
 -->
 
-<p>
+<p align="justify">
   <font  color="red">
     Note: We will need to download the value set as text. 
     If you are logged into VSAC download as text is not an option. 
@@ -85,4 +85,16 @@ This is the file that will be used to create the value set in OHDSI.
   title="Click to see full size."
 />
 
+<p align="justify">
+  <font  color="red">
+    Note: The value set used in this example (COVID_19Vaccine_CVX) is not suitable for production. 
+    This value set is missing a large number of codes that should be included 
+    when looking for covid vaccination codes. 
+  </font>
+</p>
+<p align="justify">
+  More on how to evaluate and find suitable value sets can be found on the 
+  <a href="getting-started-vsac-value-sets.html">Getting Started with VSAC Value Sets</a> 
+  which can be found under the "Getting Started" menu at the top of this page. 
+</p>
 

@@ -1,0 +1,87 @@
+---
+title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI </div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
+# Getting Started with VSAC Value Sets
+
+<!--
+*
+* Introduction
+*
+-->
+
+## Introduction
+<p align="justify">
+  VSAC hosts a wide range of value sets created for differing purposes. 
+  For example a value set may be created that is intended to define a population such as "homeless". 
+  An other value set relating to homeless might be a set of codes 
+  that could be used to determine a probability of homeless 
+  (i.e. a patient that has many of the codes in the value set has a higher probability of being homeless).
+  Also, value sets come from a number of different organizations 
+  and are created by individuals with differing expertise 
+  (e.g. clinical background v. non-clinical contributors). 
+</p>
+<p>
+  Therefore, it is critical to evaluate a value set before selecting it for use. 
+  Some of the criteria for this evaluation include
+  <ul>
+    <li>The purpose of the value set</li>
+    <li>The source organization of the value set</li>
+    <li>The expertises of the creator(s) of the value set</li>
+    <li>The type of the value set (e.g. Grouping, Extensional, Intensional, etc.)</li>
+    <li>  
+      Before selecting a value set for production use it should be reviewed 
+      by both clinicians and informaticists. 
+    </li>
+  </ul>
+  There currently is not a repository of VSAC value sets 
+  that have been evaluated for fitness for use in the definition of OHDSI phenotypes. 
+</p>
+<p align="justify">
+  In our first example, we will find and evaluate a value set for covid vaccinations
+</p>
+
+<!--
+*
+* Finding a Value Set
+*
+-->
+
+## Finding a Value Set (COVID)
+### Search
+The VSAC web site provides a search tool that can be used 
+to find candidates for a value set that can be used to define 
+a list of codes that represent covid vaccinations as medication/vaccination codes. 
+To search for this list of value sets go to the 
+<a href="https://vsac.nlm.nih.gov/valueset/expansions?pr=all">VSAC Search Page</a>. 
+Select the "Search Value Sets" tab. 
+Enter "covid vaccination" in the Query text box. 
+Select Search. 
+This should give a list similar to the one shown below. 
+
+
+
+
+
+
+
+
