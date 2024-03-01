@@ -1,0 +1,105 @@
+---
+title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI Use Cases and Examples</div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
+# Import a Single Value Set
+## Introduction
+This use case will walk through the process of 
+downloading a value set from VSAC, 
+using the vsac-to-ohdsi tools to extract, 
+and convert the value set into a format that can be imported into OHDSI, 
+and using the OHDSI Atlas tool to import the value set into OHDSI. 
+This use case will then show how to create a cohort (phenotype) 
+using the imported value set. 
+For this use case a UMLS license is required for full access to VSAC. 
+Instructions for getting a UMLS license are 
+<a href="./getting-started_vsac.html">here</a>. 
+
+## Download a Value Set from VSAC
+
+<!--
+*
+* Download
+*
+-->
+
+<p align="justify">
+  <font  color="red">
+    Note: We will need to download the value set as text. 
+    Sometimes this option is not available when download is selected. 
+    Logging off and retrying the download or 
+    logging off, logging back on, and then retrying the download 
+    usually enables this functionality. 
+  </font>
+</p>
+
+Navigate to the 
+<a href="https://vsac.nlm.nih.gov/valueset/expansions?pr=all">VSAC Search Page</a>. 
+<ul>
+  <li>
+    Select the "Search Value Sets" tab. 
+  </li>
+  <li>
+    Enter "covid vaccination" into the Query field. 
+  </li>
+  <li>
+    Select Search. 
+  </li>
+  <li>
+    Select the COVID_19Vaccine_CVX value set from the list of values. 
+  </li>
+  <li>
+    Select Download. 
+  </li>
+  <li>
+    Select Text as the download type in the pick list that appears.
+  </li>
+</ul>
+<img 
+  src="./img/use-cases/01-use-cases-01-import-single/01-download.png" 
+  onclick="openFullSizeImage('./img/use-cases/01-use-cases-01-import-single/01-download.png')" 
+  title="Click to see full size."
+/>
+<br/>
+<br/>
+The value set should now be downloaded as a single .txt.zip file as shown below. 
+This is the file that will be used to create the value set in OHDSI. 
+<br/>
+<img 
+  src="./img/use-cases/01-use-cases-01-import-single/02-downloaded.png" 
+  onclick="openFullSizeImage('./img/use-cases/01-use-cases-01-import-single/02-downloaded.png')" 
+  title="Click to see full size."
+/>
+
+<p align="justify">
+  <font  color="red">
+    Note: The value set used in this example (COVID_19Vaccine_CVX) is not suitable for production. 
+    This value set is missing a large number of codes that should be included 
+    when looking for covid vaccination codes. 
+  </font>
+</p>
+<p align="justify">
+  More on how to evaluate and find suitable value sets can be found on the 
+  <a href="getting-started-vsac-value-sets.html">Getting Started with VSAC Value Sets</a> 
+  which can be found under the "Getting Started" menu at the top of this page. 
+</p>
+

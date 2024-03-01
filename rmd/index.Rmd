@@ -1,0 +1,11 @@
+---
+title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI </div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+# VSAC to OHDSI Documentation

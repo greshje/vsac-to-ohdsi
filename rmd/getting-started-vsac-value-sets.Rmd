@@ -1,0 +1,162 @@
+---
+title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI </div>'
+output:
+   html_document:
+        toc: TRUE
+        toc_depth: 3
+        toc_float:
+          collapsed: false
+---
+
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
+# Getting Started with VSAC Value Sets
+
+<!--
+*
+* Introduction
+*
+-->
+
+## Introduction
+<p align="justify">
+  VSAC hosts a wide range of value sets created for differing purposes. 
+  For example a value set may be created that is intended to define a population such as "homeless". 
+  An other value set relating to homeless might be a set of codes 
+  that could be used to determine a probability of homeless 
+  (i.e. a patient that has many of the codes in the value set has a higher probability of being homeless).
+  Also, value sets come from a number of different organizations 
+  and are created by individuals with differing expertise 
+  (e.g. clinical background v. non-clinical contributors). 
+</p>
+<p>
+  Therefore, it is critical to evaluate a value set before selecting it for use. 
+  Some of the criteria for this evaluation include
+  <ul>
+    <li>The purpose of the value set</li>
+    <li>The source organization of the value set</li>
+    <li>The expertises of the creator(s) of the value set</li>
+    <li>The type of the value set (e.g. Grouping, Extensional, Intensional, etc.)</li>
+    <li>  
+      Before selecting a value set for production use it should be reviewed 
+      by both clinicians and informaticists. 
+    </li>
+  </ul>
+  There currently is not a repository of VSAC value sets 
+  that have been evaluated for fitness for use in the definition of OHDSI phenotypes. 
+</p>
+
+<!--
+*
+* Finding a Value Set (COVID)
+*
+-->
+
+## Finding a Value Set (COVID)
+
+<p align="justify">
+  In our first example, we will find and evaluate a value set for covid vaccinations.
+</p>
+
+<!--
+*
+* Search
+*
+-->
+
+### Search
+
+The VSAC web site provides a search tool that can be used 
+to find candidates for a value set that can be used to define 
+a list of codes that represent covid vaccinations as medication/vaccination codes. 
+To search for this list of value sets go to the 
+<a href="https://vsac.nlm.nih.gov/valueset/expansions?pr=all">VSAC Search Page</a>. 
+Select the "Search Value Sets" tab. 
+Enter "covid vaccination" in the Query text box. 
+Select Search. 
+We can further refine our search results by entering "Active" as the expansion status. 
+Enter CVX as the code system (we know that there should be some CVX codes in the value set we are looking for). 
+Enter "Grouping" as the definition type. 
+VSAC value sets generally include codes from a single code system, 
+Value sets with a definition type of "Grouping" include codes from multiple systems. 
+This should give a list similar to the one shown below. 
+We will be using the "COVID19Vaccine_CVX" value set for this example. 
+Click on the OID for this value set to view the details we will need 
+for the initial assessment of this value set. 
+<img 
+  src="./img/getting-started/vsac-value-sets/01-search.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac-value-sets/01-search.png')" 
+  title="Click to see full size."
+/>
+<br/>
+<br/>
+
+<!--
+*
+* View Results
+*
+-->
+
+### View Details
+To view the details of the value set select the "Value Set Details" tab in the middle of the page. 
+Select the "Description" tab on the left to see the details for this result set as shown below. 
+<img 
+  src="./img/getting-started/vsac-value-sets/02-results.png" 
+  onclick="openFullSizeImage('./img/getting-started/vsac-value-sets/02-results.png')" 
+  title="Click to see full size."
+/>
+<br/>
+
+<p align="justify">
+  From the purpose section of this page we can see that this value set might be fit 
+  for our purpose of using this value set to define an OHDSI code set for a cohort. 
+  However, we also notice that this value set is attributed to  a business analyst 
+  and we have no indication that this value set was reviewed by a clinician. 
+  We next consult the clinician on our team to review this value set. 
+  Upon review the clinician indicates that there is a large number of codes 
+  that are not included that should be. 
+</p>
+<p>
+  Fortunately, our clinician has created a more comprehensive value set. 
+  This set will be uploaded to VSAC by our clinician. 
+  Once this is done we will be able to use the new value set. 
+</p>
+
+<!--
+*
+* View Results
+*
+-->
+
+### Discussion
+VSAC is a powerful resource for the curation and distribution of value sets, 
+both with in OHDSI as well as outside of OHDSI. 
+However, value sets in VSAC serve differing purposes. 
+When selecting a value set from VSAC it is critical to review the value set 
+and to have the value set reviewed by both informatics specialists and clinical experts. 
+The use of VSAC value sets in OHDSI would be greatly enhanced 
+by the creation of a mechanism to identify validated and prefered value sets 
+and associate these value sets with well defined descriptions 
+of how they should be used in an OHDSI context. 
+
+
+
+
+
+
+
+
+
+
+
