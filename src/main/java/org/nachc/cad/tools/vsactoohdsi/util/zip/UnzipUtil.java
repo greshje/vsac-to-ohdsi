@@ -6,10 +6,9 @@ import com.nach.core.util.file.ZipUtil;
 
 public class UnzipUtil {
 
-	public static File unzip(File zipFile) {
-		File targetDir = zipFile.getParentFile();
+	public static File unzip(File zipFile, File targetDir) {
 		File rtn = ZipUtil.unzip(zipFile, targetDir);
-		return rtn;
+		return targetDir;
 	}
 	
 }
