@@ -1,4 +1,4 @@
-package org.nachc.cad.tools.vsactoohdsi.auth;
+package org.nachc.cad.tools.vsactoohdsi.util.auth;
 
 import java.io.File;
 import java.util.Properties;
