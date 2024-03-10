@@ -26,6 +26,28 @@
 
 	<!-- 
 	*
+	* repositories
+	*
+	-->
+
+	<repositories>
+	
+		<repository>
+		  <id>ohdsi.snapshots</id>
+		  <name>repo.ohdsi.org-snapshots</name>
+		  <url>https://repo.ohdsi.org/nexus/content/repositories/snapshots</url>
+		  <releases>
+		      <enabled>false</enabled>
+		  </releases>
+		  <snapshots>
+		      <enabled>true</enabled>
+		  </snapshots>
+		</repository>	
+
+	</repositories>
+
+	<!-- 
+	*
 	* dependencies
 	*
 	-->
@@ -90,11 +112,19 @@
 			<version>42.3.6</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.databricks/databricks-jdbc -->
+		<!-- Databricks JDBC Driver -->
 		<dependency>
 		    <groupId>com.databricks</groupId>
-		    <artifactId>databricks-jdbc</artifactId>
-		    <version>2.6.36</version>
+		    <artifactId>jdbc</artifactId>
+		    <version>1.0</version>
+		    <scope>system</scope>
+		    <systemPath>${project.basedir}/lib/SimbaSparkJDBC42-2.6.16.1020/SparkJDBC42.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>org.ohdsi.sql</groupId>
+			<artifactId>SqlRender</artifactId>
+			<version>1.9.2-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>

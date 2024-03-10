@@ -37,4 +37,8 @@ public class VsacToOhdsiAuthProperties {
 		return PROPS.getProperty("SchemaName");
 	}
 	
+	public static String getDatabaseType() {
+		return PROPS.getProperty("DatabaseType");
+	}
+	
 }

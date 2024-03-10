@@ -2,10 +2,49 @@ package org.nachc.cad.tools.vsactoohdsi.util.ohdsi;
 
 import java.sql.Connection;
 
+import org.nachc.cad.tools.vsactoohdsi.util.auth.VsacToOhdsiAuthProperties;
+import org.nachc.cad.tools.vsactoohdsi.util.dvo.ohdsi.cdm.ConceptDvo;
+import org.nachc.cad.tools.vsactoohdsi.util.parser.vsac.valueset.dvo.VsacValueSetRow;
+import org.ohdsi.sql.SqlRender;
+import org.ohdsi.sql.SqlTranslate;
+import org.yaorma.database.Data;
+import org.yaorma.database.Database;
+import org.yaorma.database.Row;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class GetOhdsiCodeForVsacConcept {
 
-	public static void exec(String system, String code, Connection conn) {
-		
+	public static ConceptDvo exec(String system, String code, Connection conn) {
+		String databaseType = VsacToOhdsiAuthProperties.getDatabaseType();
+		String[] parameters = {"vocabulary_id", "concept_code"};
+		String[] values = {system, code};
+		String sqlString = "select * from concept where vocabulary_id = '@vocabulary_id' and concept_code = '@concept_code'";
+		SqlRender ren = new SqlRender();
+		sqlString = SqlRender.renderSql(sqlString, parameters, values);
+		sqlString = SqlTranslate.translateSql(sqlString, databaseType);
+		log.info("Database type: " + databaseType);
+		log.info("Executing query:\n" + sqlString);
+		Data data = Database.query(sqlString, conn);
+		ConceptDvo dvo = new ConceptDvo();
+		if(data.size() > 0) {
+			Row row = data.get(0);
+			dvo = new ConceptDvo();
+			dvo.setConceptClassId("ConceptClassId");
+			dvo.setConceptCode("ConceptCode");
+			dvo.setConceptId(row.getInt("conceptId"));
+			dvo.setConceptName(row.get("conceptName"));
+			dvo.setDomainId("DomainId");
+			dvo.setInvalidReason("InvalidReason");
+			dvo.setStandardConcept("StandardConcept");
+			dvo.setValidEndDate("ValidEndDate");
+			dvo.setValidStartDate("ValidStartDate");
+			dvo.setVocabularyId("VocabularyId");
+		} else {
+			dvo = null;
+		}
+		return dvo;
 	}
 	
 }

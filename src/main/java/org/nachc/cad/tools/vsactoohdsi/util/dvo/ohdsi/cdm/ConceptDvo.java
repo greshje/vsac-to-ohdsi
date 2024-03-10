@@ -28,9 +28,9 @@ public class ConceptDvo {
 
 	private String conceptCode;
 
-	private Date validStartDate;
+	private String validStartDate;
 
-	private Date validEndDate;
+	private String validEndDate;
 
 	private String invalidReason;
 
