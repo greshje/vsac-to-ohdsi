@@ -16,7 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GetOhdsiCodeForVsacConcept {
 
+	public static ConceptDvo exec(VsacValueSetRow row, Connection conn) {
+		String system = row.getCodeSystemName();
+		String code = row.getCode();
+		return exec(system, code, conn);
+	}
+	
 	public static ConceptDvo exec(String system, String code, Connection conn) {
+		log.info("Getting: " + system + ":" + code);
 		String databaseType = VsacToOhdsiAuthProperties.getDatabaseType();
 		String[] parameters = {"vocabulary_id", "concept_code"};
 		String[] values = {system, code};

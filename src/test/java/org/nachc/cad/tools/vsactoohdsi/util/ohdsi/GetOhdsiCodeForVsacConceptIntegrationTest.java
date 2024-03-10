@@ -24,8 +24,7 @@ public class GetOhdsiCodeForVsacConceptIntegrationTest {
 			String code = "207";
 			ConceptDvo dvo = GetOhdsiCodeForVsacConcept.exec(system, code, conn);
 			log.info("Got row:");
-			log.info("\t" + dvo.getConceptId());
-			log.info("\t" + dvo.getConceptName());
+			log.info("\t" + dvo.getConceptId() + "\t" + dvo.getConceptName());
 		} finally {
 			Database.close(conn);
 		}
