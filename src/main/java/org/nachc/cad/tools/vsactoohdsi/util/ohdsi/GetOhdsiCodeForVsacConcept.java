@@ -38,16 +38,16 @@ public class GetOhdsiCodeForVsacConcept {
 		if(data.size() > 0) {
 			Row row = data.get(0);
 			dvo = new ConceptDvo();
-			dvo.setConceptClassId("ConceptClassId");
-			dvo.setConceptCode("ConceptCode");
+			dvo.setConceptClassId(row.get("conceptClassId"));
+			dvo.setConceptCode(row.get("conceptCode"));
 			dvo.setConceptId(row.getInt("conceptId"));
 			dvo.setConceptName(row.get("conceptName"));
-			dvo.setDomainId("DomainId");
-			dvo.setInvalidReason("InvalidReason");
-			dvo.setStandardConcept("StandardConcept");
-			dvo.setValidEndDate("ValidEndDate");
-			dvo.setValidStartDate("ValidStartDate");
-			dvo.setVocabularyId("VocabularyId");
+			dvo.setDomainId(row.get("domainId"));
+			dvo.setInvalidReason(row.get("invalidReason"));
+			dvo.setStandardConcept(row.get("standardConcept"));
+			dvo.setValidEndDate(row.get("validEndDate"));
+			dvo.setValidStartDate(row.get("validStartDate"));
+			dvo.setVocabularyId(row.get("vocabularyId"));
 		} else {
 			dvo = null;
 		}

@@ -16,14 +16,11 @@ public class VsacToOhdsiConnectionFactory {
 			log.info("Getting connection...");
 			String url = VsacToOhdsiAuthProperties.getJdbcUrl();
 			String token = VsacToOhdsiAuthProperties.getToken();
-			String schemaName = VsacToOhdsiAuthProperties.getSchemaName();
+			log.info("URL: \n" + url);
 			url = url + token;
 			log.info("Got properties, getting connection...");
 			Connection conn = DriverManager.getConnection(url);
-			log.info("Got connection, setting schema...");
-			String sqlString = "use " + schemaName;
-			Database.update(sqlString, conn);
-			log.info("Done getting connection and setting schema.");
+			log.info("Done getting connection.");
 			return conn;
 		} catch(Exception exp) {
 			throw new RuntimeException(exp);

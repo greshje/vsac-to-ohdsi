@@ -25,15 +25,31 @@ public class ConvertOhdsiConceptDvoListToJson {
 		// wrap the "items" array in an object
 		JsonObject wrapperObject = new JsonObject();
 		wrapperObject.add("items", itemsArray);
-		String json = gson.toJson(wrapperObject); 
+		String json = gson.toJson(wrapperObject);
 		json = JsonUtil.prettyPrint(json);
 		return json;
 	}
 
-	public static JsonObject getJsonElementForConceptDvo(ConceptDvo dvo) {
+	public static JsonObject getJsonElementForConceptDvo(ConceptDvo conceptDvo) {
+		// create the json object for the dvo
+		JsonObject conceptJsonObject = new JsonObject();
+		conceptJsonObject.addProperty("CONCEPT_CLASS_ID", conceptDvo.getConceptClassId());
+		conceptJsonObject.addProperty("CONCEPT_CODE", conceptDvo.getConceptCode());
+		conceptJsonObject.addProperty("CONCEPT_ID", conceptDvo.getConceptId());
+		conceptJsonObject.addProperty("CONCEPT_NAME", conceptDvo.getConceptName());
+		conceptJsonObject.addProperty("DOMAIN_ID", conceptDvo.getDomainId());
+		conceptJsonObject.addProperty("INVALID_REASON", conceptDvo.getInvalidReason());
+		// conceptJsonObject.addProperty("INVALID_REASON_CAPTION", conceptDvo.getInvalidReasonCaption()); 
+		// conceptJsonObject.addProperty("STANDARD_CONCEPT_CAPTION", conceptDvo.getStandardConceptCaption()); 
+		conceptJsonObject.addProperty("STANDARD_CONCEPT", conceptDvo.getStandardConcept());
+		conceptJsonObject.addProperty("VOCABULARY_ID", conceptDvo.getVocabularyId());
+		conceptJsonObject.addProperty("VALID_START_DATE", conceptDvo.getValidStartDate());
+		conceptJsonObject.addProperty("VALID_END_DATE", conceptDvo.getValidEndDate());
+		// create the parent object and add the properties
 		JsonObject rtn = new JsonObject();
-		rtn.addProperty("CONCEPT_CLASS_ID", dvo.getConceptClassId());
-		rtn.addProperty("CONCEPT_ID", dvo.getConceptId());
+		rtn.add("concept", conceptJsonObject);
+		rtn.addProperty("isExcluded", false);
+		// done
 		return rtn;
 	}
 
