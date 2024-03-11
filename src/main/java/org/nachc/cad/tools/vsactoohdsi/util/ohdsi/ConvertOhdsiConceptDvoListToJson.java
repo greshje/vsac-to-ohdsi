@@ -30,9 +30,10 @@ public class ConvertOhdsiConceptDvoListToJson {
 		return json;
 	}
 
-	public static JsonElement getJsonElementForConceptDvo(ConceptDvo conceptDvo) {
-		Gson gson = new Gson();
-		JsonElement rtn = gson.toJsonTree(conceptDvo);
+	public static JsonObject getJsonElementForConceptDvo(ConceptDvo dvo) {
+		JsonObject rtn = new JsonObject();
+		rtn.addProperty("CONCEPT_CLASS_ID", dvo.getConceptClassId());
+		rtn.addProperty("CONCEPT_ID", dvo.getConceptId());
 		return rtn;
 	}
 
