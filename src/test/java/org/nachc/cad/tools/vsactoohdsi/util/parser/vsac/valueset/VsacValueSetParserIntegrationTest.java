@@ -15,12 +15,12 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class VsacValueSetParserIntegrationTest {
 	
-	private static final String VALUE_SET = FileUtil.getAsString("/test/value-set-codes/value-set-codes.txt");
+	private static final String VALUE_SET_STRING = FileUtil.getAsString("/test/value-set-codes/value-set-codes.txt");
 	
 	@Test
 	public void shouldParseVsacValueSet() {
 		log.info("Starting test...");
-		VsacValueSet valueSet = VsacValueSetParser.parse(VALUE_SET);
+		VsacValueSet valueSet = VsacValueSetParser.parse(VALUE_SET_STRING);
 		ArrayList<VsacValueSetRow> rows = valueSet.getRows();
 		log.info("Got " + rows.size() + " records");
 		for(VsacValueSetRow row : rows) {
