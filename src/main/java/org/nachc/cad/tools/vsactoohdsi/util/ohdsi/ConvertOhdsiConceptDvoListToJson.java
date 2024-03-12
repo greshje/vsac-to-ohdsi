@@ -49,6 +49,7 @@ public class ConvertOhdsiConceptDvoListToJson {
 		JsonObject rtn = new JsonObject();
 		rtn.add("concept", conceptJsonObject);
 		rtn.addProperty("isExcluded", false);
+		// TODO: FINISH THIS THOUGHT
 		// done
 		return rtn;
 	}
