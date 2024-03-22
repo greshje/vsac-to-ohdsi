@@ -1,4 +1,4 @@
-package org.nachc.cad.tools.vsactoohdsi.util.ohdsi;
+package org.nachc.cad.tools.vsactoohdsi.util.ohdsi.json;
 
 import java.util.ArrayList;
 
@@ -10,9 +10,13 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.nach.core.util.json.JsonUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class ConvertOhdsiConceptDvoListToJson {
 
 	public static String exec(ArrayList<ConceptDvo> conceptDvoList) {
+		log.info("Creating JSON...");		
 		Gson gson = new Gson();
 		JsonArray itemsArray = new JsonArray();
 		// add each ConceptDvo as a "concept" element in the "items" array
@@ -27,6 +31,7 @@ public class ConvertOhdsiConceptDvoListToJson {
 		wrapperObject.add("items", itemsArray);
 		String json = gson.toJson(wrapperObject);
 		json = JsonUtil.prettyPrint(json);
+		log.info("Done getting concept list.");
 		return json;
 	}
 
