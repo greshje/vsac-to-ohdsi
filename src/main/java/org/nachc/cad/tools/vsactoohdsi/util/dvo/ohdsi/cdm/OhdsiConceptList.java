@@ -2,6 +2,8 @@ package org.nachc.cad.tools.vsactoohdsi.util.dvo.ohdsi.cdm;
 
 import java.util.ArrayList;
 
+import org.nachc.cad.tools.vsactoohdsi.util.ohdsi.list.ConvertOhdsiConceptDvoListToConceptIdList;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +27,11 @@ public class OhdsiConceptList {
 	
 	public int getNotFound() {
 		return requested - found;
+	}
+
+	public String getListAsString() {
+		String rtn = ConvertOhdsiConceptDvoListToConceptIdList.exec(dvoList);
+		return rtn;
 	}
 	
 }
