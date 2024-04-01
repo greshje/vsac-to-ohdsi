@@ -60,7 +60,8 @@ public class ExtractOhdsiConceptIdListFromVsacZipWithCptCodesIntegrationTest {
 					msg += StringUtils.rightPad(row.getOID(), 35);
 					msg += StringUtils.rightPad(row.getDescriptor(), 80);
 				}
-				log.info("NOT FOUND LIST (The following concepts were not found in your OHDSI CDM concept table):\n" + msg);
+				msg += "\n\n";
+				log.info("\n\nNOT FOUND LIST (The following concepts were not found in your OHDSI CDM concept table):" + msg);
 			}
 		} finally {
 			Database.close(conn);
