@@ -15,12 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class GetOhdsiConceptsForVsacValueSet {
 
-	public static OhdsiConceptList exec(File zipFile, Connection conn) {
-		return null;
-		// TODO: FINISH THIS THOUGHT
-	}
-
-	
 	public static OhdsiConceptList exec(String vsacValueSetString, Connection conn) {
 		VsacValueSet vsacValueSet = VsacValueSetParser.parse(vsacValueSetString);
 		ArrayList<VsacValueSetRow> rows = vsacValueSet.getRows();
@@ -28,7 +22,11 @@ public class GetOhdsiConceptsForVsacValueSet {
 		log.info("Got " + rows.size() + " vsac records.");
 		for(VsacValueSetRow row : rows) {
 			ConceptDvo dvo = GetOhdsiCodeForVsacConcept.exec(row, conn);
-			rtn.add(dvo);
+			if(dvo != null) {
+				rtn.add(dvo);
+			} else {
+				rtn.addNotFound(row);
+			}
 		}
 		return rtn;
 	}

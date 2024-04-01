@@ -27,7 +27,7 @@ public class GetOhdsiConceptsForVsacValueSetIntegrationTest {
 			OhdsiConceptList conceptList = GetOhdsiConceptsForVsacValueSet.exec(VALUE_SET, conn);
 			log.info("Requested: " + conceptList.getRequested() + " concepts.");
 			log.info("Found:     " + conceptList.getFound() + " concepts.");
-			log.info("Missing:   " + conceptList.getNotFound() + " concepts.");
+			log.info("Missing:   " + conceptList.getNotFoundCount() + " concepts.");
 		} finally {
 			Database.close(conn);
 		}

@@ -35,7 +35,7 @@ public class ConvertOhdsiConceptDvoListToConceptIdListIntegrationTest {
 			String msg = "";
 			msg += ("\nRequested: " + conceptList.getRequested());
 			msg += ("\nFound:     " + conceptList.getFound());
-			msg += ("\nNot Found: " + conceptList.getNotFound());
+			msg += ("\nNot Found: " + conceptList.getNotFoundCount());
 			log.info("Summary: " + msg);
 		} finally {
 			Database.close(conn);

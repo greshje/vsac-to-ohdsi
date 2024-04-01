@@ -7,7 +7,7 @@
 	</properties>
 
 	<groupId>org.nachc.cad.tools</groupId>
-	<artifactId>vsac-to-ohdsi</artifactId>
+	<artifactId>vsactoohdsi</artifactId>
 	<version>${version}</version>
 
 	<packaging>jar</packaging>
