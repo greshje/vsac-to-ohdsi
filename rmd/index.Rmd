@@ -35,6 +35,17 @@ The Value Set Authority Center (VSAC) is a central repository that provides auth
 - **Resource Optimization:** Organizations that contribute value sets to VSAC can reduce duplicative efforts in terminology management.
 - **Enhanced Data Analytics:** Contributing to and using standardized value sets from VSAC enhances the ability of organizations to perform robust data analytics and research.
 
+VSAC is a powerful resource for the curation and distribution of value sets, 
+both with in OHDSI as well as outside of OHDSI. 
+However, value sets in VSAC serve differing purposes. 
+When selecting a value set from VSAC it is critical to review the value set 
+and to have the value set reviewed by both informatics specialists and clinical experts. 
+The use of VSAC value sets in OHDSI would be greatly enhanced 
+by the creation of a mechanism to identify validated and prefered value sets 
+and associate these value sets with well defined descriptions 
+of how they should be used in an OHDSI context. 
+
+
 In conclusion, VSAC plays a pivotal role in the standardization of clinical terminologies, supporting the interoperability of health IT systems, improving the quality of patient care, and facilitating healthcare research and analytics. Both using and contributing to VSAC's value sets offer significant advantages to healthcare providers, IT developers, researchers, and policymakers, advancing the goals of a more efficient, effective, and unified healthcare system.
 </div>
 
@@ -101,12 +112,19 @@ and vsac-to-ohdsi can be integrated into other projects using the other resource
       https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
     </a> 
 ```
-  <dependency>
-  		<groupId>org.nachc.cad.tools</groupId>
-  		<artifactId>vsactoohdsi</artifactId>
-  		<version>1.1.023</version>
-  </dependency>
+<dependency>
+		<groupId>org.nachc.cad.tools</groupId>
+		<artifactId>vsactoohdsi</artifactId>
+		<version>1.1.023</version>
+</dependency>
 ```
+</li>
+  <li>
+    <b>Prerequisites</b><br/>
+    To run vsac-to-ohdsi you will need Java. 
+    The vsac-to-ohdsi API has been tested using both Java 1.8 and Java 11.0. 
+    The only other prerequisite is connectivity to an instance of the OHDSI CDM 
+    that includes populated vocabulary tables. 
   </li>
 </ul>
 
