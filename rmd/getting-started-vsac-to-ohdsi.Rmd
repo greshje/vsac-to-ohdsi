@@ -1,5 +1,5 @@
 ---
-title: '<div><img src="img/ohdsi40x40.png"></img> VSAC to OHDSI </div>'
+title: '<div><img src="img/ohdsi40x40.png"></img>&nbsp;Getting Started with VSAC to OHDSI</div>'
 output:
    html_document:
         toc: TRUE
@@ -8,4 +8,104 @@ output:
           collapsed: false
 ---
 
-# Getting Started with VSAC to OHDSI
+## Introduction
+
+<div style="text-align: justify;">
+  <p>
+    This document describes how to generate a list of OHDSI concept_id values 
+    from a VSAC value set exported from VSAC. 
+    <ul>
+      <li>
+        <b>VSAC</b><br/>
+        For more information on getting started with VSAC 
+        (e.g. creating an account and generating user credentials) refer to: <br/> 
+        <a href="./getting-started-vsac.html" />Getting Started with VSAC</a> 
+      </li>
+      <li>
+        <b>VSAC Value Sets</b><br/>
+        For more information on selecting, using, and exporting VSAC value sets refer to: <br/>
+        <a href="./getting-started-vsac-value-sets.html">Getting Started with VSAC Value Sets</a> 
+      </li>
+    </ul>
+    The output of a download of a value set from VSAC is a single zip file 
+    that contains text files including the files that describe the value set composition. 
+    This zip file is what will be used to generate the OHDSI concept_id values. 
+  </p>
+  <p>
+    The following steps to import a VSAC value set into OHDSI are detailed here
+    <ul>
+      <li>
+        Download and install the vsac-to-ohdsi standalone application
+      </li>
+      <li>
+        Configure the connection to your instance of the CDM
+      </li>
+      <li>
+        Run the vsac-to-ohdsi standalone application 
+        to generate OHDSI concept_id values for the concepts in the VSAC value set
+      </li>
+      <li>
+        Create an OHDSI concept set for your VSAC concepts using Atlas
+      </li>
+      <li>
+        Accessing the vsac-to-ohdsi API programmatically using Java
+      </li>
+    </ul>
+  </p>
+</div>
+
+<!---
+*
+* Install vsac-to-ohdsi Standalone
+*
+* -->
+
+## Install VSAC-TO-OHDSI Standalone
+
+<div style="text-align: justify;">
+</div>
+
+<!---
+*
+* Configure Connection
+*
+* -->
+
+## Configure Connection
+
+<div style="text-align: justify;">
+</div>
+
+<!---
+*
+* Run VSAC-TO-OHDSI Standalone
+*
+* -->
+
+## Run VSAC-TO-OHDSI Standalone
+
+<div style="text-align: justify;">
+</div>
+
+<!---
+*
+* Create OHDSI Concept Set
+*
+* -->
+
+## Create OHDSI Concept Set
+
+<div style="text-align: justify;">
+</div>
+
+<!---
+*
+* The VSAC-TO-OHDSI API
+*
+* -->
+
+## The VSAC-TO-OHDSI API
+
+<div style="text-align: justify;">
+</div>
+
