@@ -452,7 +452,8 @@ here
 Download and install the vsac-to-ohdsi standalone application
 </li>
 <li>
-Configure the connection to your instance of the CDM
+Configure the connection to your instance of the CDM and other
+properties
 </li>
 <li>
 Run the vsac-to-ohdsi standalone application to generate OHDSI
@@ -491,11 +492,14 @@ the latest release. <br/> <img
     onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
     title="Click to see full size."
   /> <br/> <br/> After extracting the zip file you should see a folder
-that contains the vsac-to-ohdsi.jar file, a test folder, and a lib
-folder. The vsac-to-ohdsi.jar file is the executable for the standalone
-application. The test folder contains some files from VSAC that can be
-used for testing. The lib folder contains the jar files for the
-dependencies of the standalone application. <br/> <img 
+that contains the vsac-to-ohdsi.jar file, a test folder, a lib folder,
+and an auth folder. The vsac-to-ohdsi.jar file is the executable for the
+standalone application. The test folder contains some files from VSAC
+that can be used for testing. The lib folder contains the jar files for
+the dependencies of the standalone application. The auth folder contains
+the configuration files that will be use to configure this application
+for your specific implementation (e.g. database type, schema name,
+database connectivity, etc.). <br/> <img 
     src="img/getting-started/vsac-to-ohdsi/03-extracted.png" 
     onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/03-extracted.png')" 
     title="Click to see full size."
@@ -503,14 +507,52 @@ dependencies of the standalone application. <br/> <img
 </div>
 <!---
 *
-* Configure Connection
+* Configure 
 *
 * -->
 </div>
-<div id="configure-connection" class="section level2">
-<h2>Configure Connection</h2>
+<div id="configure" class="section level2">
+<h2>Configure</h2>
 <div style="text-align: justify;">
-
+There are only a few parameters that need to be configured to run
+vsac-to-ohdsi. To update the configuration with your parameters:
+<ul>
+<li>
+Open the ./auth folder
+</li>
+<li>
+Open the auth.properties file
+</li>
+<li>
+Update this file with your configuration
+</li>
+</ul>
+<p>The auth.properties provided by default includes the following. If
+you are using Databricks you will only need to change the url and the
+token values.</p>
+<pre><code>JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
+Token=MY_SECRET_TOKEN_GOES_HERE
+SchemaName=vsac_to_omop
+DatabaseType=spark</code></pre>
+The only required parameters are:
+<ul>
+<li>
+<b>JdbcUrl</b><br/> The url that points the the CDM schema that contains
+the vocabulary tables you are using
+</li>
+<li>
+<b>Token</b><br/> The token/password that will be used to connect to the
+database
+</li>
+<li>
+<b>SchemaName</b><br/> The name of the database that contains the
+vocabulary tables you are using
+</li>
+<li>
+<b>DatabaseType</b><br/> The RDMS that will be used (e.g. Spark
+(Databricks), PostgreSql, MS SqlServer, etc.)
+</li>
+</ul>
 </div>
 <!---
 *
