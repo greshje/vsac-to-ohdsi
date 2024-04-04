@@ -11,7 +11,7 @@
 
 
 
-<title> VSAC to OHDSI</title>
+<title> Getting Started with VSAC to OHDSI</title>
 
 <script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -324,7 +324,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html"><div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div></a>
+      <a class="navbar-brand" href="index.html"><div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI </div></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -402,14 +402,149 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><img src="img/ohdsi40x40.png"></img> VSAC
-to OHDSI</h1>
+<h1 class="title toc-ignore"><img src="img/ohdsi40x40.png"></img> Getting
+Started with VSAC to OHDSI</h1>
 
 </div>
 
 
-<div id="getting-started-with-vsac-to-ohdsi" class="section level1">
-<h1>Getting Started with VSAC to OHDSI</h1>
+<!--
+*
+* javascript
+*
+* -->
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<div style="text-align: justify;">
+<p>
+This document describes how to generate a list of OHDSI concept_id
+values from a VSAC value set exported from VSAC.
+<ul>
+<li>
+<b>VSAC</b><br/> For more information on getting started with VSAC
+(e.g. creating an account and generating user credentials) refer to:
+<br/> <a href="./getting-started-vsac.html" />Getting Started with
+VSAC</a>
+</li>
+<li>
+<b>VSAC Value Sets</b><br/> For more information on selecting, using,
+and exporting VSAC value sets refer to: <br/>
+<a href="./getting-started-vsac-value-sets.html">Getting Started with
+VSAC Value Sets</a>
+</li>
+</ul>
+The output of a download of a value set from VSAC is a single zip file
+that contains text files including the files that describe the value set
+composition. This zip file is what will be used to generate the OHDSI
+concept_id values.
+</p>
+<p>
+The following steps to import a VSAC value set into OHDSI are detailed
+here
+<ul>
+<li>
+Download and install the vsac-to-ohdsi standalone application
+</li>
+<li>
+Configure the connection to your instance of the CDM
+</li>
+<li>
+Run the vsac-to-ohdsi standalone application to generate OHDSI
+concept_id values for the concepts in the VSAC value set
+</li>
+<li>
+Create an OHDSI concept set for your VSAC concepts using Atlas
+</li>
+<li>
+Accessing the vsac-to-ohdsi API programmatically using Java
+</li>
+</ul>
+</p>
+</div>
+<!---
+*
+* Install vsac-to-ohdsi Standalone
+*
+* -->
+</div>
+<div id="install-vsac-to-ohdsi" class="section level2">
+<h2>Install VSAC-TO-OHDSI</h2>
+<div style="text-align: justify;">
+<p>The vsac-to-ohdsi standalone application can be downloaded from the
+Github page at
+<a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">https://github.com/NACHC-CAD/vsac-to-ohdsi-example</a>.
+A fully build and ready to run version can be downloaded by selecting
+the link for the latest release and then downloading the zip file for
+that version. <br/><br/> Navigate the the Github repository and select
+the latest release. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/01-github-page.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/01-github-page.png')" 
+    title="Click to see full size."
+  /> <br/> <br/> Download the zip file. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/02-download.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
+    title="Click to see full size."
+  /> <br/> <br/> After extracting the zip file you should see a folder
+that contains the vsac-to-ohdsi.jar file, a test folder, and a lib
+folder. The vsac-to-ohdsi.jar file is the executable for the standalone
+application. The test folder contains some files from VSAC that can be
+used for testing. The lib folder contains the jar files for the
+dependencies of the standalone application. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/03-extracted.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/03-extracted.png')" 
+    title="Click to see full size."
+  /></p>
+</div>
+<!---
+*
+* Configure Connection
+*
+* -->
+</div>
+<div id="configure-connection" class="section level2">
+<h2>Configure Connection</h2>
+<div style="text-align: justify;">
+
+</div>
+<!---
+*
+* Run VSAC-TO-OHDSI Standalone
+*
+* -->
+</div>
+<div id="run-vsac-to-ohdsi" class="section level2">
+<h2>Run VSAC-TO-OHDSI</h2>
+<div style="text-align: justify;">
+
+</div>
+<!---
+*
+* Create OHDSI Concept Set
+*
+* -->
+</div>
+<div id="create-ohdsi-concept-set" class="section level2">
+<h2>Create OHDSI Concept Set</h2>
+<div style="text-align: justify;">
+
+</div>
+<!---
+*
+* The VSAC-TO-OHDSI API
+*
+* -->
+</div>
+<div id="the-vsac-to-ohdsi-api" class="section level2">
+<h2>The VSAC-TO-OHDSI API</h2>
+<div style="text-align: justify;">
+
+</div>
 </div>
 
 

@@ -324,7 +324,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html"><div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div></a>
+      <a class="navbar-brand" href="index.html"><div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI </div></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -408,8 +408,181 @@ to OHDSI</h1>
 </div>
 
 
-<div id="vsac-to-ohdsi-documentation" class="section level1">
-<h1>VSAC to OHDSI Documentation</h1>
+<!-- 
+*
+* WHAT IS VSAC
+*
+* -->
+<div id="what-is-vsac" class="section level1">
+<h1>What is VSAC</h1>
+<div id="introduction-to-the-value-set-authority-center-vsac"
+class="section level3">
+<h3>Introduction to the Value Set Authority Center (VSAC)</h3>
+<div style="text-align: justify;">
+<p>The Value Set Authority Center (VSAC) is a central repository that
+provides authoritative, comprehensive, and accessible sets of codes and
+terms for specific clinical concepts. Operated by the National Library
+of Medicine (NLM), VSAC supports a variety of health care and research
+initiatives, including clinical quality measures, research protocols,
+and health information technology (IT) systems. Its primary role is to
+facilitate the standardization and harmonization of clinical terminology
+across different healthcare entities, ensuring that medical terms and
+codes used in electronic health records (EHRs), quality reports, and
+patient documents are consistent and accurately represent patient care
+and outcomes.</p>
+<div id="advantages-of-using-value-sets-from-vsac"
+class="section level4">
+<h4>Advantages of Using Value Sets from VSAC</h4>
+<ul>
+<li><strong>Standardization:</strong> VSAC provides a standardized
+approach to the use of clinical terminology, which is critical for
+ensuring the interoperability of health information systems.</li>
+<li><strong>Quality of Care:</strong> Access to a comprehensive
+repository of well-defined value sets supports clinical decision-making
+and quality measurement.</li>
+<li><strong>Efficiency:</strong> Utilizing value sets from VSAC can
+significantly reduce the time and resources required to manage clinical
+terminologies.</li>
+<li><strong>Compliance:</strong> VSAC supports compliance with
+regulatory requirements and standards for health information
+exchange.</li>
+</ul>
+</div>
+<div id="advantages-of-contributing-value-sets-to-vsac"
+class="section level4">
+<h4>Advantages of Contributing Value Sets to VSAC</h4>
+<ul>
+<li><strong>Collaboration and Sharing:</strong> Contributing value sets
+to VSAC allows organizations to share their clinical expertise and
+terminologies with a broader community.</li>
+<li><strong>Recognition and Influence:</strong> Contributors to VSAC can
+gain recognition as leaders in their field, influencing the development
+of standards and best practices in clinical terminology.</li>
+<li><strong>Resource Optimization:</strong> Organizations that
+contribute value sets to VSAC can reduce duplicative efforts in
+terminology management.</li>
+<li><strong>Enhanced Data Analytics:</strong> Contributing to and using
+standardized value sets from VSAC enhances the ability of organizations
+to perform robust data analytics and research.</li>
+</ul>
+<p>VSAC is a powerful resource for the curation and distribution of
+value sets, both with in OHDSI as well as outside of OHDSI. However,
+value sets in VSAC serve differing purposes. When selecting a value set
+from VSAC it is critical to review the value set and to have the value
+set reviewed by both informatics specialists and clinical experts. The
+use of VSAC value sets in OHDSI would be greatly enhanced by the
+creation of a mechanism to identify validated and prefered value sets
+and associate these value sets with well defined descriptions of how
+they should be used in an OHDSI context.</p>
+<p>In conclusion, VSAC plays a pivotal role in the standardization of
+clinical terminologies, supporting the interoperability of health IT
+systems, improving the quality of patient care, and facilitating
+healthcare research and analytics. Both using and contributing to VSAC’s
+value sets offer significant advantages to healthcare providers, IT
+developers, researchers, and policymakers, advancing the goals of a more
+efficient, effective, and unified healthcare system.</p>
+</div>
+</div>
+<!-- 
+*
+* WHAT IS OHDSI
+*
+* -->
+</div>
+</div>
+<div id="what-is-ohdsi" class="section level1">
+<h1>What is OHDSI</h1>
+<div style="text-align: justify;">
+<p>The Observational Health Data Sciences and Informatics (OHDSI) is a
+collaborative multi-stakeholder, interdisciplinary initiative aimed at
+enhancing the value of observational health data through large-scale
+analytics. Its foundation is built on the premise of open science and
+shared data, utilizing the Observational Medical Outcomes Partnership
+(OMOP) Common Data Model (CDM) to standardize the format and content of
+clinical and observational research data. OHDSI’s network includes a
+global consortium of researchers, healthcare providers, and industry
+partners dedicated to improving health by empowering a community to
+collaboratively generate the evidence that promotes better health
+decisions and better care. By fostering a culture of transparency,
+replication, and scalability, OHDSI seeks to achieve a world in which
+observational research produces a comprehensive understanding of health
+and disease.</p>
+<p>The benefits of using OHDSI are substantial for researchers,
+healthcare providers, and patients alike. For one, the standardization
+of health data into a common model enhances interoperability between
+different health systems and databases, significantly expanding the
+potential for cross-institutional and international research
+collaborations. This standardization also improves the efficiency and
+quality of research studies by ensuring consistency in how health data
+is represented and analyzed, thereby accelerating the discovery and
+application of new insights into patient care. Moreover, OHDSI’s
+commitment to open science principles ensures that research
+methodologies and results are transparent and reproducible, enhancing
+the credibility of observational research. Through its collaborative
+approach, OHDSI facilitates a more comprehensive understanding of
+diseases, treatment outcomes, and healthcare processes, ultimately
+contributing to more informed healthcare decisions and better patient
+outcomes.</p>
+</div>
+<!-- 
+*
+* WHAT IS VSAC-TO-OHDSI
+*
+* -->
+</div>
+<div id="what-is-vsac-to-ohdsi" class="section level1">
+<h1>What is vsac-to-ohdsi</h1>
+<div style="text-align: justify;">
+<p>The VSAC-TO-OHDSI project enables the import of any VSAC value set
+into OHDSI. This includes the mapping of VSAC system identifiers and
+codes to OHDSI concept_id values and the creation of OHDSI concept sets
+that can then be used to define OHDSI phenotypes and cohorts.</p>
+<p>This project is public and open source under the Apache 2
+license.</p>
+A standalone application that can be run from a command line is
+available in Github at the location shown below and vsac-to-ohdsi can be
+integrated into other projects using the other resources shown below
+<ul>
+<li>
+<b>Standalone/Example application</b><br/> The standalone application
+for vsac-to-ohdsi can be downloaded from Github here: <br/>
+<a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">
+https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/> Detail
+instructions for downloading and running the standalone application are
+here: <br/> <a href="./getting-started-vsac-to-ohdsi.html">Getting
+Started with vsac-to-ohdsi</a>
+</li>
+<li>
+<b>Source code for the vsac-to-ohdsi api</b><br />
+The vsac-to-ohdsi API souce code is available at
+<a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">https://github.com/NACHC-CAD/vsac-to-ohdsi</a>
+</li>
+<li>
+<p><b>Maven repository for the vsac-to-ohdsi api</b><br />
+The vsact-to-ohdsi API can be integrated into any Java project using
+Maven (MVN) by adding something similar to the following to the projects
+pom.xml file. <br/> Refer to the Standalone/Example application for a
+complete pom.xml file:<br/>
+<a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">
+https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/> Check the
+Maven Central repository for the latest versions:<br/>
+<a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
+https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
+</a></p>
+<pre><code>&lt;dependency&gt;
+        &lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
+        &lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
+        &lt;version&gt;1.1.023&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</li>
+<li>
+<b>Prerequisites</b><br/> To run vsac-to-ohdsi you will need Java. The
+vsac-to-ohdsi API has been tested using both Java 1.8 and Java 11.0. The
+only other prerequisite is connectivity to an instance of the OHDSI CDM
+that includes populated vocabulary tables.
+</li>
+</ul>
+</div>
 </div>
 
 
@@ -461,7 +634,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "h1",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {

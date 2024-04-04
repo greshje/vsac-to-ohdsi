@@ -8,7 +8,7 @@ output:
       in_header: "img/favicon.html"
 exclude: ["extras"]
 navbar:
-  title: '<div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI Documentation </div>'
+  title: '<div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI </div>'
   right:
   left:
     - text: "Background"
