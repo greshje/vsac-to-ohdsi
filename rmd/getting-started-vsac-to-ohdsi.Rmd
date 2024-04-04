@@ -21,6 +21,7 @@ output:
   }
 </script>
 
+
 ## Introduction
 
 <div style="text-align: justify;">
@@ -174,6 +175,84 @@ DatabaseType=spark
 ## Run VSAC-TO-OHDSI
 
 <div style="text-align: justify;">
+  To run vsac-to-ohdsi open a cmd window and navigate to the directory where the files were unszipped. 
+  Enter the command shown below using the path to the zip file downloaded from VSAC you would like to use. 
+  In this example we are using a file that was downloaed from VSAC 
+  that is provided in the test folder of the vsac-to-ohdsi download. 
+```
+java -jar vsac-to-ohdsi.jar "./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip"
+```
+  After the code has completed you should see output similar to the following. 
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/05-output.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/05-output.png')" 
+    title="Click to see full size."
+  />
+  <br/>
+  <br/>
+  The important pieces of the output include the following.
+  <br/>
+  The list of OHDSI concept_id values
+
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,053 09:39:45.053 [main] INFO  (VsacToOhdsiExample.java:30) - OHDSI Concept List:
+724906
+724907
+724905
+702679
+702866
+702677
+702678
+702676
+905420
+778265
+778266
+778267
+722118
+722120
+722117
+722119
+702666
+702669
+702672
+702673
+716023
+716024
+716025
+
+</pre>
+
+  <br/>
+  The number of codes in the VSAC value set (Requested), 
+  the number of concepts that could be mapped to the OHDSI concept_id values in your CDM, 
+  and the number of concepts that were not found.
+
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,053 09:39:45.053 [main] INFO  (VsacToOhdsiExample.java:31) - Summary:
+Requested: 28
+Found:     23
+Not Found: 5
+
+</pre>
+  <br/>
+  A list of the VSAC concepts that were not found. 
+
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,057 09:39:45.057 [main] INFO  (VsacToOhdsiExample.java:53) -
+
+NOT FOUND LIST (The following concepts were not found in your OHDSI CDM concept table):
+CODE SYSTEM         CODE      OID                                DESCRIPTOR
+-----------         ----      ---                                ----------
+
+RXNORM              2468235   2.16.840.1.113762.1.4.1235.350     SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2 0.1 MG/ML Injectable Suspension
+RXNORM              2470234   2.16.840.1.113762.1.4.1235.350     SARS-CoV-2 (COVID-19) vaccine, mRNA-1273 0.2 MG/ML Injectable Suspension
+RXNORM              2479835   2.16.840.1.113762.1.4.1235.350     SARS-COV-2 (COVID-19) vaccine, vector - Ad26 100000000000 UNT/ML Injectable Suspension
+HCPCS Level I: CPT  91304     2.16.840.1.113762.1.4.1235.350     Severe acute respiratory syndrome coronavirus 2 (COVID-19) vaccine, recombinant spike protein nanoparticle, saponin-based adjuvant, preservative free, 5 mcg/0.5mL dosage, for intramuscular use
+CPT                 91304     2.16.840.1.113762.1.4.1235.350     Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (coronavirus disease [COVID-19]) vaccine, recombinant spike protein nanoparticle, saponin-based adjuvant, 5 mcg/0.5 mL dosage, for intramuscular use
+
+</pre>
+
 </div>
 
 <!---
