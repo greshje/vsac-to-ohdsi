@@ -328,14 +328,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="background.html">
-    <span class="fa fa-landmark"></span>
-     
-    Background
-  </a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-list"></span>
      
@@ -366,20 +359,6 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="use-cases-01-import-single.html">Import a Single Value Set from VSAC into OHDSI</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-list"></span>
-     
-    About
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="about.html">About</a>
     </li>
   </ul>
 </li>
@@ -558,8 +537,8 @@ The vsac-to-ohdsi API souce code is available at
 <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">https://github.com/NACHC-CAD/vsac-to-ohdsi</a>
 </li>
 <li>
-<p><b>Maven repository for the vsac-to-ohdsi api</b><br />
-The vsact-to-ohdsi API can be integrated into any Java project using
+<b>Maven repository for the vsac-to-ohdsi api</b><br />
+The vsac-to-ohdsi API can be integrated into any Java project using
 Maven (MVN) by adding something similar to the following to the projects
 pom.xml file. <br/> Refer to the Standalone/Example application for a
 complete pom.xml file:<br/>
@@ -568,12 +547,14 @@ https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/> Check the
 Maven Central repository for the latest versions:<br/>
 <a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
 https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
-</a></p>
-<pre><code>&lt;dependency&gt;
+</a>
+<pre class="pre-scrollable">
+&lt;dependency&gt;
         &lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
         &lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
-        &lt;version&gt;1.1.023&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+        &lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </li>
 <li>
 <b>Prerequisites</b><br/> To run vsac-to-ohdsi you will need Java. The

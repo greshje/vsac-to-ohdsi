@@ -98,7 +98,7 @@ and vsac-to-ohdsi can be integrated into other projects using the other resource
   </li>
   <li>
     <b>Maven repository for the vsac-to-ohdsi api</b>  
-    The vsact-to-ohdsi API can be integrated into any Java project using Maven (MVN) 
+    The vsac-to-ohdsi API can be integrated into any Java project using Maven (MVN) 
     by adding something similar to the following to the projects pom.xml file. 
     <br/>
     Refer to the Standalone/Example application for a complete pom.xml file:<br/>
@@ -111,13 +111,13 @@ and vsac-to-ohdsi can be integrated into other projects using the other resource
     <a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
       https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
     </a> 
-```
-<dependency>
-		<groupId>org.nachc.cad.tools</groupId>
-		<artifactId>vsactoohdsi</artifactId>
-		<version>1.1.023</version>
-</dependency>
-```
+<pre class="pre-scrollable">
+&lt;dependency&gt;
+		&lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
+		&lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
+		&lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </li>
   <li>
     <b>Prerequisites</b><br/>

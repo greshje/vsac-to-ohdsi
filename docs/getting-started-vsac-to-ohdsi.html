@@ -328,14 +328,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="background.html">
-    <span class="fa fa-landmark"></span>
-     
-    Background
-  </a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-list"></span>
      
@@ -366,20 +359,6 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="use-cases-01-import-single.html">Import a Single Value Set from VSAC into OHDSI</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-list"></span>
-     
-    About
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="about.html">About</a>
     </li>
   </ul>
 </li>
@@ -527,13 +506,15 @@ Open the auth.properties file
 Update this file with your configuration
 </li>
 </ul>
-<p>The auth.properties provided by default includes the following. If
-you are using Databricks you will only need to change the url and the
-token values.</p>
-<pre><code>JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
+The auth.properties provided by default includes the following. If you
+are using Databricks you will only need to change the url and the token
+values.
+<pre class="pre-scrollable">
+JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
 Token=MY_SECRET_TOKEN_GOES_HERE
 SchemaName=vsac_to_omop
-DatabaseType=spark</code></pre>
+DatabaseType=spark
+</pre>
 The only required parameters are:
 <ul>
 <li>
@@ -563,12 +544,14 @@ vocabulary tables you are using
 <div id="run-vsac-to-ohdsi" class="section level2">
 <h2>Run VSAC-TO-OHDSI</h2>
 <div style="text-align: justify;">
-<p>To run vsac-to-ohdsi open a cmd window and navigate to the directory
+To run vsac-to-ohdsi open a cmd window and navigate to the directory
 where the files were unszipped. Enter the command shown below using the
 path to the zip file downloaded from VSAC you would like to use. In this
 example we are using a file that was downloaed from VSAC that is
-provided in the test folder of the vsac-to-ohdsi download.</p>
-<pre><code>java -jar vsac-to-ohdsi.jar &quot;./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip&quot;</code></pre>
+provided in the test folder of the vsac-to-ohdsi download.
+<pre class="pre-scrollable">
+java -jar vsac-to-ohdsi.jar "./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip"
+</pre>
 <p>After the code has completed you should see output similar to the
 following. <br/> <img 
     src="img/getting-started/vsac-to-ohdsi/05-output.png" 
@@ -638,7 +621,19 @@ CPT                 91304     2.16.840.1.113762.1.4.1235.350     Severe acute re
 <div id="create-ohdsi-concept-set" class="section level2">
 <h2>Create OHDSI Concept Set</h2>
 <div style="text-align: justify;">
-
+<p>To import the VSAC concepts into OHDSI open Atlas, navigate to
+Concept Sets, Create a New Concept Set, select the Import tab, paste the
+list of OHDSI concept_id values into the Concept Identifiers tab, and
+then select Add To Concept Set. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/06-import.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/06-import.png')" 
+    title="Click to see full size."
+  /> <br/> <br/> The imported concepts can now be viewed by selecting
+the Included Concepts tab. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/07-view.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/07-view.png')" 
+    title="Click to see full size."
+  /></p>
 </div>
 <!---
 *
@@ -649,7 +644,29 @@ CPT                 91304     2.16.840.1.113762.1.4.1235.350     Severe acute re
 <div id="the-vsac-to-ohdsi-api" class="section level2">
 <h2>The VSAC-TO-OHDSI API</h2>
 <div style="text-align: justify;">
-
+The vsac-to-ohdsi API can be integrated into any Java project using
+Maven (MVN) by adding something similar to the following to the projects
+pom.xml file. <br/>
+<ul>
+<li>
+Refer to the Standalone/Example application for a complete pom.xml
+file:<br/> <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">
+https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/>
+</li>
+<li>
+Check the Maven Central repository for the latest versions:<br/>
+<a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
+https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
+</a>
+</li>
+</ul>
+<pre class="pre-scrollable">
+&lt;dependency&gt;
+        &lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
+        &lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
+        &lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </div>
 </div>
 
