@@ -8,6 +8,19 @@ output:
           collapsed: false
 ---
 
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
 ## Introduction
 
 <div style="text-align: justify;">
@@ -60,10 +73,49 @@ output:
 *
 * -->
 
-## Install VSAC-TO-OHDSI Standalone
+## Install VSAC-TO-OHDSI
 
 <div style="text-align: justify;">
+  The vsac-to-ohdsi standalone application can be downloaded from the Github page at 
+  <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">https://github.com/NACHC-CAD/vsac-to-ohdsi-example</a>. 
+  A fully build and ready to run version can be downloaded by selecting the link for the latest release 
+  and then downloading the zip file for that version. 
+  <br/><br/>
+  Navigate the the Github repository and select the latest release.
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/01-github-page.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/01-github-page.png')" 
+    title="Click to see full size."
+  />
+  <br/>
+  <br/>
+  Download the zip file. 
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/02-download.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
+    title="Click to see full size."
+  />
+  <br/>
+  <br/>
+  After extracting the zip file you should see a folder that contains the vsac-to-ohdsi.jar file, 
+  a test folder, and a lib folder. 
+  The vsac-to-ohdsi.jar file is the executable for the standalone application. 
+  The test folder contains some files from VSAC that can be used for testing. 
+  The lib folder contains the jar files for the dependencies of the standalone application. 
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/03-extracted.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/03-extracted.png')" 
+    title="Click to see full size."
+  />
+  
+  
+  
+  
 </div>
+
 
 <!---
 *
@@ -82,7 +134,7 @@ output:
 *
 * -->
 
-## Run VSAC-TO-OHDSI Standalone
+## Run VSAC-TO-OHDSI
 
 <div style="text-align: justify;">
 </div>

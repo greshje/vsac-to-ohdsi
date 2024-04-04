@@ -22,9 +22,8 @@ public class GetOhdsiConceptsForVsacValueSet {
 		log.info("Got " + rows.size() + " vsac records.");
 		for(VsacValueSetRow row : rows) {
 			ConceptDvo dvo = GetOhdsiCodeForVsacConcept.exec(row, conn);
-			if(dvo != null) {
-				rtn.add(dvo);
-			} else {
+			rtn.add(dvo);
+			if(dvo == null) {
 				rtn.addNotFound(row);
 			}
 		}
