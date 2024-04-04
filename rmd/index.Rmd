@@ -8,6 +8,83 @@ output:
           collapsed: false
 ---
 
+<!--
+*
+* javascript
+*
+* -->
+
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+
+<!-- 
+*
+* Quickstart
+*
+* -->
+
+# Quickstart
+<div style="text-align: justify;">
+  The vsac-to-ohdsi API and standalone application provide a simple and complete path to importing VSAC value sets into OHDSI. 
+  Importing VSAC value sets into OHDSI can be done in the following few short steps 
+  (detailed instructions are available on the 
+  <a href="./getting-started-vsac-to-ohdsi.html">Getting Started with VSAC-TO-OHDSI</a>) page.
+  
+### Download the application
+  The vsac-to-ohdsi standalone application can be downloaded from the releases page at 
+  <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">
+    https://github.com/NACHC-CAD/vsac-to-ohdsi
+  </a>. 
+  The download is a single zip file that includes all of the resources required to run the application. 
+  The application is installed by simply unzipping this file. 
+  
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/02-download.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
+    title="Click to see full size."
+  />
+  
+### Configure the application
+  The application requires only four parameters to be configured:
+  The auth.properties provided by default includes the following. 
+  If you are using Databricks you will only need to change the url and the token values. 
+<pre class="pre-scrollable">
+JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
+Token=MY_SECRET_TOKEN_GOES_HERE
+SchemaName=vsac_to_omop
+DatabaseType=spark
+</pre>
+  
+### Run the application
+  The application is a standalone Java application that can be run by simply executing the following. 
+<pre class="pre-scrollable">
+java -jar vsac-to-ohdsi.jar "./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip"
+</pre>
+  
+### Import the concepts
+  The application will output a list of OHDSI concept_id values corresponding the the VSAC concepts in the value set. 
+  These concept_id values can be imported into OHDSI directly using Atlas. 
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/06-import.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/06-import.png')" 
+    title="Click to see full size."
+  />
+  
+### Success!!!
+  We have now successfully imported our VSAC value set into OHDSI!
+  <br/>
+  <img 
+    src="./img/getting-started/vsac-to-ohdsi/07-view.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/07-view.png')" 
+    title="Click to see full size."
+  />
+</div>
+
 <!-- 
 *
 * WHAT IS VSAC
@@ -98,7 +175,7 @@ and vsac-to-ohdsi can be integrated into other projects using the other resource
   </li>
   <li>
     <b>Maven repository for the vsac-to-ohdsi api</b>  
-    The vsact-to-ohdsi API can be integrated into any Java project using Maven (MVN) 
+    The vsac-to-ohdsi API can be integrated into any Java project using Maven (MVN) 
     by adding something similar to the following to the projects pom.xml file. 
     <br/>
     Refer to the Standalone/Example application for a complete pom.xml file:<br/>
@@ -111,13 +188,13 @@ and vsac-to-ohdsi can be integrated into other projects using the other resource
     <a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
       https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
     </a> 
-```
-<dependency>
-		<groupId>org.nachc.cad.tools</groupId>
-		<artifactId>vsactoohdsi</artifactId>
-		<version>1.1.023</version>
-</dependency>
-```
+<pre class="pre-scrollable">
+&lt;dependency&gt;
+		&lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
+		&lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
+		&lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </li>
   <li>
     <b>Prerequisites</b><br/>

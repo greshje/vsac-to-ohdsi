@@ -11,9 +11,6 @@ navbar:
   title: '<div><img src="img/ohdsi16x16.png"></img> VSAC to OHDSI </div>'
   right:
   left:
-    - text: "Background"
-      icon: fa-landmark
-      href: background.html
     - text: "Getting Started"
       icon: fa-list
       menu:
@@ -28,11 +25,6 @@ navbar:
       menu:
         - text: "Import a Single Value Set from VSAC into OHDSI"
           href: use-cases-01-import-single.html
-    - text: "About"
-      icon: fa-list
-      menu:
-        - text: "About"
-          href: about.html
     - text: Github
       icon: fa-github
       href: https://github.com/NACHC-CAD/vsac-to-ohdsi

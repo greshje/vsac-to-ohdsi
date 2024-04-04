@@ -328,14 +328,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="background.html">
-    <span class="fa fa-landmark"></span>
-     
-    Background
-  </a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-list"></span>
      
@@ -366,20 +359,6 @@ div.tocify {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="use-cases-01-import-single.html">Import a Single Value Set from VSAC into OHDSI</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-list"></span>
-     
-    About
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="about.html">About</a>
     </li>
   </ul>
 </li>
@@ -452,7 +431,8 @@ here
 Download and install the vsac-to-ohdsi standalone application
 </li>
 <li>
-Configure the connection to your instance of the CDM
+Configure the connection to your instance of the CDM and other
+properties
 </li>
 <li>
 Run the vsac-to-ohdsi standalone application to generate OHDSI
@@ -491,11 +471,14 @@ the latest release. <br/> <img
     onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
     title="Click to see full size."
   /> <br/> <br/> After extracting the zip file you should see a folder
-that contains the vsac-to-ohdsi.jar file, a test folder, and a lib
-folder. The vsac-to-ohdsi.jar file is the executable for the standalone
-application. The test folder contains some files from VSAC that can be
-used for testing. The lib folder contains the jar files for the
-dependencies of the standalone application. <br/> <img 
+that contains the vsac-to-ohdsi.jar file, a test folder, a lib folder,
+and an auth folder. The vsac-to-ohdsi.jar file is the executable for the
+standalone application. The test folder contains some files from VSAC
+that can be used for testing. The lib folder contains the jar files for
+the dependencies of the standalone application. The auth folder contains
+the configuration files that will be use to configure this application
+for your specific implementation (e.g. database type, schema name,
+database connectivity, etc.). <br/> <img 
     src="img/getting-started/vsac-to-ohdsi/03-extracted.png" 
     onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/03-extracted.png')" 
     title="Click to see full size."
@@ -503,14 +486,54 @@ dependencies of the standalone application. <br/> <img
 </div>
 <!---
 *
-* Configure Connection
+* Configure 
 *
 * -->
 </div>
-<div id="configure-connection" class="section level2">
-<h2>Configure Connection</h2>
+<div id="configure" class="section level2">
+<h2>Configure</h2>
 <div style="text-align: justify;">
-
+There are only a few parameters that need to be configured to run
+vsac-to-ohdsi. To update the configuration with your parameters:
+<ul>
+<li>
+Open the ./auth folder
+</li>
+<li>
+Open the auth.properties file
+</li>
+<li>
+Update this file with your configuration
+</li>
+</ul>
+The auth.properties provided by default includes the following. If you
+are using Databricks you will only need to change the url and the token
+values.
+<pre class="pre-scrollable">
+JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
+Token=MY_SECRET_TOKEN_GOES_HERE
+SchemaName=vsac_to_omop
+DatabaseType=spark
+</pre>
+The only required parameters are:
+<ul>
+<li>
+<b>JdbcUrl</b><br/> The url that points the the CDM schema that contains
+the vocabulary tables you are using
+</li>
+<li>
+<b>Token</b><br/> The token/password that will be used to connect to the
+database
+</li>
+<li>
+<b>SchemaName</b><br/> The name of the database that contains the
+vocabulary tables you are using
+</li>
+<li>
+<b>DatabaseType</b><br/> The RDMS that will be used (e.g. Spark
+(Databricks), PostgreSql, MS SqlServer, etc.)
+</li>
+</ul>
 </div>
 <!---
 *
@@ -521,7 +544,73 @@ dependencies of the standalone application. <br/> <img
 <div id="run-vsac-to-ohdsi" class="section level2">
 <h2>Run VSAC-TO-OHDSI</h2>
 <div style="text-align: justify;">
+To run vsac-to-ohdsi open a cmd window and navigate to the directory
+where the files were unszipped. Enter the command shown below using the
+path to the zip file downloaded from VSAC you would like to use. In this
+example we are using a file that was downloaed from VSAC that is
+provided in the test folder of the vsac-to-ohdsi download.
+<pre class="pre-scrollable">
+java -jar vsac-to-ohdsi.jar "./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip"
+</pre>
+<p>After the code has completed you should see output similar to the
+following. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/05-output.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/05-output.png')" 
+    title="Click to see full size."
+  /> <br/> <br/> The important pieces of the output include the
+following. <br/> The list of OHDSI concept_id values</p>
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,053 09:39:45.053 [main] INFO  (VsacToOhdsiExample.java:30) - OHDSI Concept List:
+724906
+724907
+724905
+702679
+702866
+702677
+702678
+702676
+905420
+778265
+778266
+778267
+722118
+722120
+722117
+722119
+702666
+702669
+702672
+702673
+716023
+716024
+716025
 
+</pre>
+<p><br/> The number of codes in the VSAC value set (Requested), the
+number of concepts that could be mapped to the OHDSI concept_id values
+in your CDM, and the number of concepts that were not found.</p>
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,053 09:39:45.053 [main] INFO  (VsacToOhdsiExample.java:31) - Summary:
+Requested: 28
+Found:     23
+Not Found: 5
+
+</pre>
+<p><br/> A list of the VSAC concepts that were not found.</p>
+<pre class="pre-scrollable">
+2024-04-04 09:39:45,057 09:39:45.057 [main] INFO  (VsacToOhdsiExample.java:53) -
+
+NOT FOUND LIST (The following concepts were not found in your OHDSI CDM concept table):
+CODE SYSTEM         CODE      OID                                DESCRIPTOR
+-----------         ----      ---                                ----------
+
+RXNORM              2468235   2.16.840.1.113762.1.4.1235.350     SARS-CoV-2 (COVID-19) vaccine, mRNA-BNT162b2 0.1 MG/ML Injectable Suspension
+RXNORM              2470234   2.16.840.1.113762.1.4.1235.350     SARS-CoV-2 (COVID-19) vaccine, mRNA-1273 0.2 MG/ML Injectable Suspension
+RXNORM              2479835   2.16.840.1.113762.1.4.1235.350     SARS-COV-2 (COVID-19) vaccine, vector - Ad26 100000000000 UNT/ML Injectable Suspension
+HCPCS Level I: CPT  91304     2.16.840.1.113762.1.4.1235.350     Severe acute respiratory syndrome coronavirus 2 (COVID-19) vaccine, recombinant spike protein nanoparticle, saponin-based adjuvant, preservative free, 5 mcg/0.5mL dosage, for intramuscular use
+CPT                 91304     2.16.840.1.113762.1.4.1235.350     Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) (coronavirus disease [COVID-19]) vaccine, recombinant spike protein nanoparticle, saponin-based adjuvant, 5 mcg/0.5 mL dosage, for intramuscular use
+
+</pre>
 </div>
 <!---
 *
@@ -532,7 +621,19 @@ dependencies of the standalone application. <br/> <img
 <div id="create-ohdsi-concept-set" class="section level2">
 <h2>Create OHDSI Concept Set</h2>
 <div style="text-align: justify;">
-
+<p>To import the VSAC concepts into OHDSI open Atlas, navigate to
+Concept Sets, Create a New Concept Set, select the Import tab, paste the
+list of OHDSI concept_id values into the Concept Identifiers tab, and
+then select Add To Concept Set. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/06-import.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/06-import.png')" 
+    title="Click to see full size."
+  /> <br/> <br/> The imported concepts can now be viewed by selecting
+the Included Concepts tab. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/07-view.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/07-view.png')" 
+    title="Click to see full size."
+  /></p>
 </div>
 <!---
 *
@@ -543,7 +644,29 @@ dependencies of the standalone application. <br/> <img
 <div id="the-vsac-to-ohdsi-api" class="section level2">
 <h2>The VSAC-TO-OHDSI API</h2>
 <div style="text-align: justify;">
-
+The vsac-to-ohdsi API can be integrated into any Java project using
+Maven (MVN) by adding something similar to the following to the projects
+pom.xml file. <br/>
+<ul>
+<li>
+Refer to the Standalone/Example application for a complete pom.xml
+file:<br/> <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi-example">
+https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/>
+</li>
+<li>
+Check the Maven Central repository for the latest versions:<br/>
+<a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
+https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
+</a>
+</li>
+</ul>
+<pre class="pre-scrollable">
+&lt;dependency&gt;
+        &lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
+        &lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
+        &lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </div>
 </div>
 

@@ -328,14 +328,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="background.html">
-    <span class="fa fa-landmark"></span>
-     
-    Background
-  </a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-list"></span>
      
@@ -369,20 +362,6 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-list"></span>
-     
-    About
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="about.html">About</a>
-    </li>
-  </ul>
-</li>
 <li>
   <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">
     <span class="fa fa-github"></span>
@@ -408,11 +387,92 @@ to OHDSI</h1>
 </div>
 
 
+<!--
+*
+* javascript
+*
+* -->
+<script>
+  function openFullSizeImage(imageSrc) {
+    // Open a new window with the full-size image
+    window.open(imageSrc, '_blank', 'width=auto,height=auto');
+  }
+</script>
+<!-- 
+*
+* Quickstart
+*
+* -->
+<div id="quickstart" class="section level1">
+<h1>Quickstart</h1>
+<div style="text-align: justify;">
+<p>The vsac-to-ohdsi API and standalone application provide a simple and
+complete path to importing VSAC value sets into OHDSI. Importing VSAC
+value sets into OHDSI can be done in the following few short steps
+(detailed instructions are available on the
+<a href="./getting-started-vsac-to-ohdsi.html">Getting Started with
+VSAC-TO-OHDSI</a>) page.</p>
+<div id="download-the-application" class="section level3">
+<h3>Download the application</h3>
+<p>The vsac-to-ohdsi standalone application can be downloaded from the
+releases page at <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">
+https://github.com/NACHC-CAD/vsac-to-ohdsi </a>. The download is a
+single zip file that includes all of the resources required to run the
+application. The application is installed by simply unzipping this
+file.</p>
+<p><img 
+    src="img/getting-started/vsac-to-ohdsi/02-download.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/02-download.png')" 
+    title="Click to see full size."
+  /></p>
+</div>
+<div id="configure-the-application" class="section level3">
+<h3>Configure the application</h3>
+The application requires only four parameters to be configured: The
+auth.properties provided by default includes the following. If you are
+using Databricks you will only need to change the url and the token
+values.
+<pre class="pre-scrollable">
+JdbcUrl=jdbc:spark://nachc-databricks.cloud.databricks.com:443/vsac_to_omop;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3956472157536757/0123-223459-leafy532;AuthMech=3;UID=token;PWD=
+Token=MY_SECRET_TOKEN_GOES_HERE
+SchemaName=vsac_to_omop
+DatabaseType=spark
+</pre>
+</div>
+<div id="run-the-application" class="section level3">
+<h3>Run the application</h3>
+The application is a standalone Java application that can be run by
+simply executing the following.
+<pre class="pre-scrollable">
+java -jar vsac-to-ohdsi.jar "./test/zip/RetrieveMultipleValueSets_2.16.840.1.113762.1.4.1235.350.txt.zip"
+</pre>
+</div>
+<div id="import-the-concepts" class="section level3">
+<h3>Import the concepts</h3>
+<p>The application will output a list of OHDSI concept_id values
+corresponding the the VSAC concepts in the value set. These concept_id
+values can be imported into OHDSI directly using Atlas. <br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/06-import.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/06-import.png')" 
+    title="Click to see full size."
+  /></p>
+</div>
+<div id="success" class="section level3">
+<h3>Success!!!</h3>
+<p>We have now successfully imported our VSAC value set into OHDSI!
+<br/> <img 
+    src="img/getting-started/vsac-to-ohdsi/07-view.png" 
+    onclick="openFullSizeImage('./img/getting-started/vsac-to-ohdsi/07-view.png')" 
+    title="Click to see full size."
+  /></p>
+</div>
+</div>
 <!-- 
 *
 * WHAT IS VSAC
 *
 * -->
+</div>
 <div id="what-is-vsac" class="section level1">
 <h1>What is VSAC</h1>
 <div id="introduction-to-the-value-set-authority-center-vsac"
@@ -558,8 +618,8 @@ The vsac-to-ohdsi API souce code is available at
 <a href="https://github.com/NACHC-CAD/vsac-to-ohdsi">https://github.com/NACHC-CAD/vsac-to-ohdsi</a>
 </li>
 <li>
-<p><b>Maven repository for the vsac-to-ohdsi api</b><br />
-The vsact-to-ohdsi API can be integrated into any Java project using
+<b>Maven repository for the vsac-to-ohdsi api</b><br />
+The vsac-to-ohdsi API can be integrated into any Java project using
 Maven (MVN) by adding something similar to the following to the projects
 pom.xml file. <br/> Refer to the Standalone/Example application for a
 complete pom.xml file:<br/>
@@ -568,12 +628,14 @@ https://github.com/NACHC-CAD/vsac-to-ohdsi-example </a> <br/> Check the
 Maven Central repository for the latest versions:<br/>
 <a href="https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi">
 https://central.sonatype.com/artifact/org.nachc.cad.tools/vsactoohdsi
-</a></p>
-<pre><code>&lt;dependency&gt;
+</a>
+<pre class="pre-scrollable">
+&lt;dependency&gt;
         &lt;groupId&gt;org.nachc.cad.tools&lt;/groupId&gt;
         &lt;artifactId&gt;vsactoohdsi&lt;/artifactId&gt;
-        &lt;version&gt;1.1.023&lt;/version&gt;
-&lt;/dependency&gt;</code></pre>
+        &lt;version&gt;1.1.025&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
 </li>
 <li>
 <b>Prerequisites</b><br/> To run vsac-to-ohdsi you will need Java. The
